@@ -945,9 +945,12 @@ images
     right: -25px;
     background-color: #eee80f;
 }
+.services-single{
+	margin-bottom: 30px;
+}
 .services-single .services-text{
     padding: 20px;
-    height: 250px;
+    height: 220px;
     background-color: white;
 }
 
@@ -984,8 +987,12 @@ images
 .gallery-single a span.image-date{
    text-align: center;
    color :#555;
+   margin-top: 20px;
    margin-bottom: 20px;
    display: block;
+   font-size: 18px;
+   font-family: 'McLaren', cursive;
+
 }
 .fancybox-content.gallery-img-big .fancybox-close-small{
 	background: white;
@@ -1048,7 +1055,7 @@ span.footer-social-icons ul li .fa {
     border: 1px solid #ddd;
     text-align: center;
     line-height: 1.9;
-    transition: all 0.3 linear;
+    transition: all 0.3s linear;
 }
 span.footer-social-icons ul li a[href*="facebook.com"] .fa:hover {
     background-color: #3b5998 ;	
@@ -1171,7 +1178,7 @@ span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
 }
 .testimonial-single .testimonial-text{
 	text-align: center;
-}
+} 
 
 .testimonial-single .testimonial-text h3{
 	border-bottom: 4px solid #eee80f;
@@ -1189,4 +1196,88 @@ span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
     font-size: 20px;
     color: #ed1e24;
 
+}
+
+.inner-service-section{
+	background-image: none;
+}
+
+.inner-service-whole-wrapper .services-single{
+	border: 1px solid #ddd;
+	padding: 15px;
+}
+
+.address-wrapper ul {
+    list-style: none;
+}
+.address-wrapper ul li {
+	position: relative;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+
+}
+.address-wrapper ul li .fa{
+	font-size: 30px;
+	position: absolute;
+	left: 0px;
+}
+
+.address-wrapper ul li span {
+	padding-left: 50px;
+    display: block;
+    margin-bottom: 20px;
+}
+.address-wrapper ul li span a{
+	color: black;
+}
+
+.contact-social-icons ul li{
+	border-bottom: none;
+	display: inline;
+	margin-right: 20px;
+
+}
+.contact-social-icons ul li .fa{
+	position: relative;
+}
+.contact-social-icons ul li a{
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000;
+	color: black;
+	line-height: 3;
+	display: inline-block;
+	font-size: 20px;
+	text-align: center;
+}
+.contact-social-icons ul li a[href*="facebook.com"]:hover{
+	background-color: #4267B2;
+	color: white;
+}
+.contact-social-icons ul li a[href*="twitter.com"]:hover{
+	background-color: #1DA1F2;
+	color: white;
+}
+.contact-social-icons ul li a[href*="instagram.com"]:hover{
+	background-color: #C13584;
+	color: white;
+}
+
+.address-wrapper {
+    border-right: 1px solid #ddd;
+    padding-right: 40px;
+}
+.contact-form-wrapper form input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.contact-form-wrapper form textarea{
+	width: 100%;
+}
+.contact-form-wrapper form input[type="submit"]{
+	width: 20%;
+	float: right;
+}
+.map-wrapper iframe{
+	width: 100%;
 }
