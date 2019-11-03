@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,400,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
 html {
 	font-family: 'Roboto', sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -725,11 +726,9 @@ breadcrumb
 	padding-right: 5px;
 }
 
-.breadcrumb-trail.breadcrumbs ul li a:after {
-	contentnt: "/";
-	padding-left: 5px;
+.modelcraft-breadcrumb-title-wrapper ul {
+	float: right;
 }
-
 .breadcrumb-trail.breadcrumbs ul li a:after {
 	content: "/";
 	padding-left: 5px;
@@ -783,6 +782,8 @@ breadcrumb
     transition: all 0.3s linear;
     font-weight: 700;
     font-size: 16px;
+    font-family: 'McLaren', cursive;
+
 }
 .main-navigation ul li a:hover{
 	background-color: #000;
@@ -944,17 +945,14 @@ images
     right: -25px;
     background-color: #eee80f;
 }
-.services-single{
+.services-single .services-text{
     padding: 20px;
-     border: 1px solid #ddd;
-    box-shadow: 7px -8px 4px 1px #c1c1c1;
-    margin-top: 50px;
+    height: 250px;
     background-color: white;
 }
 
 .services-single .item-image-holder{
-    margin-top: -60px;
-   
+    margin-bottom: 0px;   	
     padding-bottom: 60%;
     overflow: hidden;
 }
@@ -974,7 +972,21 @@ images
 	overflow: visible;
 }
 
-
+.gallery-single{
+	box-shadow: 2px 2px 10px 2px #ddd;
+    padding: 20px;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+}
+.gallery-single .item-image-holder{
+	padding-bottom: 60%;
+}
+.gallery-single a span.image-date{
+   text-align: center;
+   color :#555;
+   margin-bottom: 20px;
+   display: block;
+}
 .fancybox-content.gallery-img-big .fancybox-close-small{
 	background: white;
     top: -30px;
@@ -1045,7 +1057,7 @@ span.footer-social-icons ul li a[href*="twitter.com"] .fa:hover {
     background-color: #38A1F3;	
 }
 span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
-    background-color: #C13584modelcraft-button;	
+    background-color: #C13584;	
 }
 .footer-newsletter-widget p{
 	color: white;
@@ -1061,4 +1073,120 @@ span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
 	background-color: #000;
 	border:1px solid #000;
 	height: 46px;	
+}
+
+
+/*banner*/
+.banner-full-image-wrapper{
+	background-image: url(../images/bannerinner.jpg);
+	position: relative;
+}
+.banner-text{
+	padding: 250px 30px 100px 30px;
+}
+.banner-text .page-heading{
+	text-align: center;
+}
+.banner-text .page-heading h1{
+	color: white;
+	display: inline-block;
+	border-bottom: 2px solid #eee80f;
+}
+
+.modelcraft-team-single {
+	width: 30%;
+    padding: 10px;
+    margin:0px 15px;
+    border: 1px solid #ddd;
+    cursor: pointer;	
+    float: left;
+    transition: all 0.4s linear;
+    margin-bottom: 30px;
+}
+.modelcraft-team-single .item-image-holder{
+	padding-bottom: 100%;
+}
+.modelcraft-team-single .team-detail{
+	text-align: center;
+	text-transform: capitalize;
+	transition: all 0.4s linear;
+	position: relative;
+	overflow: hidden;
+}
+.modelcraft-team-single:hover{
+	box-shadow: 2px 5px 16px 10px #ddd;
+	border: 1px solid transparent;
+}
+
+.modelcraft-team-single .team-detail ul{
+	list-style: none;
+    position: absolute;
+    background: white;
+    top: -90px;
+    width: 90%;
+    border:1px solid #ddd;
+    padding-top: 10px;
+    transition: all 0.4s linear;
+    height: 100%;
+}
+.modelcraft-team-single .team-detail ul li{
+	display: inline;
+}
+
+.modelcraft-team-single .team-detail ul li a{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    color: black;
+    line-height: 2.3;
+    display: inline-block;
+    font-size: 20px;
+}
+.team-detail p {
+    font-style: italic;
+}
+
+.modelcraft-team-single:hover .team-detail ul{
+	top: 0;
+}
+.modelcraft-team-single .team-detail ul li a[href*="facebook.com"]:hover{
+	background-color: #4267B2;
+	color: white;
+}
+.modelcraft-team-single .team-detail ul li a[href*="twitter.com"]:hover{
+	background-color: #1DA1F2;
+	color: white;
+}
+.modelcraft-team-single .team-detail ul li a[href*="instagram.com"]:hover{
+	background-color: #C13584;
+	color: white;
+}
+.testimonial-single .item-image-holder{
+    width: 15%;
+    text-align: center;
+    margin: 0 auto;
+    
+    padding-bottom: 15%;
+    border-radius: 50%;
+}
+.testimonial-single .testimonial-text{
+	text-align: center;
+}
+
+.testimonial-single .testimonial-text h3{
+	border-bottom: 4px solid #eee80f;
+	display: inline-block;
+}
+.testimonial-single .testimonial-text p{
+	position: relative;
+}
+.testimonial-single .testimonial-text p:before{
+    content: "\f10d";
+    position: absolute;
+    font-family: fontawesome;
+    left: 4px;
+    top: -14px;
+    font-size: 20px;
+    color: #ed1e24;
+
 }

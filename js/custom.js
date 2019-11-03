@@ -95,4 +95,46 @@ jQuery(document).ready(function( $ ){
     }
   ]
 });
+    $(".testimonial-slider").slick({
+    autoplay: true,
+    dots: false,
+    arrows: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade:false, 
+     responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        dots:true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+   
+      }
+    },
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        vertical:false
+
+
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        autoplay:false,
+        vertical:false,
+        centerMode: true,
+        arrows:false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
   });
