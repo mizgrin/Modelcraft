@@ -129,7 +129,7 @@ jQuery(document).ready(function( $ ){
       settings: {
         autoplay:false,
         vertical:false,
-        centerMode: true,
+        
         arrows:false,
         slidesToShow: 1,
         slidesToScroll: 1
