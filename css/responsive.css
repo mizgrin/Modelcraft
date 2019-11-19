@@ -60,7 +60,7 @@
 	    text-align: left;
 	    /* padding: 100px 3px; */
 	    text-align: center;
-	    height: 45vh;
+	    height: auto;
 	    top: 14%;
 	    border: 1px solid #000;
 	    width: 100%;
