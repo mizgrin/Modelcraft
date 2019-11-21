@@ -750,7 +750,22 @@ breadcrumb
 	padding: 25px 0px;
 	width: 70%;
 }
+.modal-event{
+	display: none;
 
+}
+.modal-event.in{
+	display: block;
+	height: 100%;
+	background-color: #00000085;
+}
+
+
+.modal-event.in .modal-dialog {
+	height: 100%;
+	margin: 100px auto;
+	width: 40%;
+}
 /*Menu-navbar*/
 .menu-header{
 	background-color: #ffffff6e;
@@ -758,7 +773,7 @@ breadcrumb
 	width: 100%;
 	left: 0;
 	transition: all 0.4s linear;
-	z-index: 9999;
+	z-index: 99;
 	height: 130px;
     display: flex;
     align-items: center;

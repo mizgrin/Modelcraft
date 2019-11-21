@@ -1,7 +1,14 @@
  
 jQuery(document).ready(function( $ ){
+setTimeout(function(){
+        $('.modal-event').addClass('in');
+    }, 400);
 
-
+  $(".modal-header .close").click(function (e) {
+    e.preventDefault();
+    $(".modal-event").removeClass("in");
+    
+  });
     new WOW().init();
 
  //hide and show search
