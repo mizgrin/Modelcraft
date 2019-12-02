@@ -16,7 +16,7 @@ body {
 }
 
 section {
-	padding: 60px 0px 30px;
+	padding: 60px 0px 60px;
 }
 .page-content{
 	padding: 30px 0px 0px;
@@ -908,18 +908,18 @@ images
 .slider-caption button.modelcraft-button{
 	margin: 0 auto;
 }
-
+.event-rules-wrapper,
+.event-detail-wrapper,
 .about-contents{
 	display: flex;
 	align-items: center;
 }
+
 .about-picture {
 	width: 48%;
     padding: 15px 20px;
     margin-right: 20px;
     display: inline-block;
-
-
 }
 .about-text{
 	width: 48%;
@@ -927,22 +927,24 @@ images
 	display: inline-block;
 	float: left;
 }
+.event-pictures .item-image-holder,
 .about-picture .item-image-holder {
 	width: 50%;
 	display: inline-block;
 	float: left;
     box-shadow:15px -12px 14px 7px #ddd;
 }
-
+.event-pictures .item-image-holder,
 .about-picture .item-image-holder {
     width: 50%;
     display: inline-block;
     float: left;
   }
-
+.event-pictures .item-image-holder:first-child,
 .about-picture .item-image-holder:first-child {
     margin-top: 70px;
   }
+  .event-pictures .item-image-holder:nth-child(2),
 .about-picture .item-image-holder:nth-child(2) {
   	margin-left: -40px;
   }
@@ -960,6 +962,7 @@ images
 	background-attachment: fixed;
 	position: relative;
 }
+.event-whole-wrapper button.modelcraft-button,
 .gallery-whole-wrapper button.modelcraft-button,
 .services-section button.modelcraft-button{
 	margin: 0 auto;
@@ -983,23 +986,35 @@ images
     right: -25px;
     background-color: #eee80f;
 }
+.events-single,
 .services-single{
 	margin-bottom: 30px;
+	position: relative;
 }
+.event-single .event-text,
 .services-single .services-text{
     padding: 20px;
     height: 270px;
     background-color: white;
 }
-
+.event-single .item-image-holder,
 .services-single .item-image-holder{
     margin-bottom: 0px;   	
     padding-bottom: 60%;
     overflow: hidden;
 }
+.date-holder{
+	position: absolute;
+    background: #555555;
+    padding: 10px 20px;
+    right: -10px;
+    top: 10px;
+}
+.event-single .item-image-holder img,
 .services-single .item-image-holder img{
    	transition: all 0.4s linear;
 }
+.services-single:hover .item-image-holder img,
 .services-single:hover .item-image-holder img{
    	transform: scale(1.4);
 }
@@ -1040,6 +1055,26 @@ images
 }
 h5.event-name{
 	text-align: center;
+}
+.events-single{
+    border: 1px solid #DDD;
+    padding: 15px;
+}
+.event-overlay{
+	background-color: white;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+}
+.event-overlay:after {
+    content: "";
+    height: 45px;
+    transform: skew(0deg , 7deg);
+    width: 100%;
+    background-color: white;
+    bottom: 8px;
+    position: absolute;
 }
 .link-effects{
 	transition: all 0.4s linear;
@@ -1331,4 +1366,70 @@ span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
 }
 .map-wrapper iframe{
 	width: 100%;
+}
+ul.rule-list{
+	list-style: none;
+}
+ul.rule-list li{
+	position: relative;
+	padding-bottom: 20px;
+}
+ul.rule-list li .fa{
+	margin-right: 10px;
+}
+
+.event-detail-text{
+	padding: 15px;
+	box-shadow: 2px 2px 10px 2px #ddd;
+}
+.event-rules-section{
+	background-color: #252525;
+	position: relative;
+}
+.event-detail-text{
+	background-color: white;
+}
+
+.event-rule-picture .item-image-holder{
+	box-shadow: 15px -12px 14px 7px #2b2222;
+}
+.event-rule{
+	box-shadow: 15px -12px 14px 7px #2b2222;	
+	background-color: #000;
+	border: 2px dashed #fff;
+
+}
+.section-overlay-skewed{
+    background-color: white;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+.section-overlay-skewed:after{
+	content: "";
+    height: 230px;
+    transform: skew(0deg , 3deg);
+    width: 100%;
+    background-color: white;
+    bottom: -106px;
+    position: absolute;
+}
+.event-rule ul li,
+.event-rule h2{
+	color: white;
+}
+.button-holder a{
+	text-align: center;
+}
+.apply-form form input{
+	width: 80%;
+}
+.form-wrapper .modal-dialog{
+	width: 80%;
+	height: 100%;
+
+}
+.form-wrapper .modal-dialog .modal-content{
+	height: 100%;
 }
