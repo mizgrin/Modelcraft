@@ -1,7 +1,14 @@
  
 jQuery(document).ready(function( $ ){
+setTimeout(function(){
+        $('.modal-event').addClass('in');
+    }, 400);
 
-
+  $(".modal-header .close").click(function (e) {
+    e.preventDefault();
+    $(".modal-event").removeClass("in");
+    
+  });
     new WOW().init();
 
  //hide and show search
@@ -51,6 +58,57 @@ jQuery(document).ready(function( $ ){
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 1000);
 });
+ var $teamwrapper = $('.modelcraft-team-slider').isotope({
+  itemSelector: '.modelcraft-team-single',
+  layoutMode: 'fitRows',
+   filter: '.dance'
+});
+// filter functions
+var filterFns = {
+  // show if number is greater than 50
+
+  // show if name ends with -ium
+
+};
+// bind filter button click
+$('.filters-button-group').on( 'click', 'button', function() {
+  var filterValue = $( this ).attr('data-filter');
+  // use filterFn if matches value
+  filterValue = filterFns[ filterValue ] || filterValue;
+  $teamwrapper.isotope({ filter: filterValue });
+});
+// change is-checked class on buttons
+$('.button-group').each( function( i, buttonGroup ) {
+  var $buttonGroup = $( buttonGroup );
+  $buttonGroup.on( 'click', 'button', function() {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    $( this ).addClass('is-checked');
+  });
+});
+
+
+
+
+
+// Add , Dlelete row dynamically
+
+     $(document).ready(function(){
+      var i=1;
+     $("#add_row").click(function(){
+      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='sur"+i+"' type='text' placeholder='Surname'  class='form-control input-md'></td><td><input  name='email"+i+"' type='text' placeholder='Email'  class='form-control input-md'></td><td><select type='text' name='gender"+i+"' class='form-control'><option name='male"+i+"' value='male'>Male</option><option name='Female"+i+"' value='Female'>Female</option><option name='3rdgen"+i+"' value='none'>None</option></select></td>");
+
+      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+      i++; 
+  });
+     $("#delete_row").click(function(){
+       if(i>1){
+     $("#addr"+(i-1)).html('');
+     i--;
+     }
+   });
+
+});
+
 
  
   $(".model-craft-slider").slick({
@@ -129,7 +187,7 @@ jQuery(document).ready(function( $ ){
       settings: {
         autoplay:false,
         vertical:false,
-        centerMode: true,
+        
         arrows:false,
         slidesToShow: 1,
         slidesToScroll: 1
@@ -137,4 +195,5 @@ jQuery(document).ready(function( $ ){
     }
   ]
 });
+    
   });

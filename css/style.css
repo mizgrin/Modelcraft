@@ -16,7 +16,7 @@ body {
 }
 
 section {
-	padding: 60px 0px 30px;
+	padding: 60px 0px 60px;
 }
 .page-content{
 	padding: 30px 0px 0px;
@@ -259,6 +259,7 @@ table th a {
 --------------------------------------------------------------*/
 button,
 input,
+select,
 select,
 textarea {
 	color: #666;
@@ -525,12 +526,15 @@ textarea:focus {
 input[type="text"],
 input[type="date"],
 input[type="time"],
+input[type="tel"],
 input[type="email"],
 input[type="url"],
 input[type="varchar"],
 input[type="password"],
 input[type="search"],
-input[type="number"] {
+input[type="number"],	
+input[type="height"],
+select{
 	padding: 10px 0 10px 15px;
 }
 
@@ -540,7 +544,7 @@ input[type="search"] {
 
 select {
 	width: 100%;
-	padding: 5px;
+	
 }
 
 textarea {
@@ -667,8 +671,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 input[type="date"]:focus,
 input[type="date"]:hover {
-	color: white;
-	background-color: transparent;
+	color: #252525;
+	background-color: white;
 }
 
 a {
@@ -750,7 +754,22 @@ breadcrumb
 	padding: 25px 0px;
 	width: 70%;
 }
+.modal-event{
+	display: none;
 
+}
+.modal-event.in{
+	display: block;
+	height: 100%;
+	background-color: #00000085;
+}
+
+
+.modal-event.in .modal-dialog {
+	height: 100%;
+	margin: 100px auto;
+	width: 40%;
+}
 /*Menu-navbar*/
 .menu-header{
 	background-color: #ffffff6e;
@@ -758,7 +777,7 @@ breadcrumb
 	width: 100%;
 	left: 0;
 	transition: all 0.4s linear;
-	z-index: 9999;
+	z-index: 99;
 	height: 130px;
     display: flex;
     align-items: center;
@@ -771,6 +790,7 @@ breadcrumb
 	list-style: none;
 	padding: 20px;
 	margin: 0;
+	position: relative;
 }
 
 .main-navigation ul li{
@@ -789,6 +809,27 @@ breadcrumb
 	background-color: #000;
 	color: white;
 }
+.main-navigation ul li .search-form-nav{
+	position: absolute;
+    right: 10%;
+    top: 80%;
+    display: block;
+}
+.main-navigation ul li .search-form-nav form{
+	display: inline-block;
+	width: 100%;
+}
+.main-navigation ul li .search-form-nav form input[type="search"]{
+	width: 65%;
+    float: left;
+    height: 30px;
+}
+.main-navigation ul li .search-form-nav form input[type="submit"]{
+    float: right;
+    width: 35%;
+    margin-left: -17px;
+}
+
 /*-------------------
 images
 ------------------*/
@@ -843,7 +884,7 @@ images
 }
 
 .model-craft-slider .slider-single .item-image-holder{
-	padding-bottom: 40%;
+	padding-bottom: 45%;
 	margin-bottom: 0px;
 }
 
@@ -871,17 +912,18 @@ images
 .slider-caption button.modelcraft-button{
 	margin: 0 auto;
 }
+.event-rules-wrapper,
+.event-detail-wrapper,
 .about-contents{
 	display: flex;
 	align-items: center;
 }
+
 .about-picture {
 	width: 48%;
     padding: 15px 20px;
     margin-right: 20px;
     display: inline-block;
-
-
 }
 .about-text{
 	width: 48%;
@@ -889,22 +931,24 @@ images
 	display: inline-block;
 	float: left;
 }
+.event-pictures .item-image-holder,
 .about-picture .item-image-holder {
 	width: 50%;
 	display: inline-block;
 	float: left;
     box-shadow:15px -12px 14px 7px #ddd;
 }
-
+.event-pictures .item-image-holder,
 .about-picture .item-image-holder {
     width: 50%;
     display: inline-block;
     float: left;
   }
-
+.event-pictures .item-image-holder:first-child,
 .about-picture .item-image-holder:first-child {
     margin-top: 70px;
   }
+  .event-pictures .item-image-holder:nth-child(2),
 .about-picture .item-image-holder:nth-child(2) {
   	margin-left: -40px;
   }
@@ -922,6 +966,7 @@ images
 	background-attachment: fixed;
 	position: relative;
 }
+.event-whole-wrapper button.modelcraft-button,
 .gallery-whole-wrapper button.modelcraft-button,
 .services-section button.modelcraft-button{
 	margin: 0 auto;
@@ -945,20 +990,35 @@ images
     right: -25px;
     background-color: #eee80f;
 }
+.events-single,
+.services-single{
+	margin-bottom: 30px;
+	position: relative;
+}
+.event-single .event-text,
 .services-single .services-text{
     padding: 20px;
-    height: 250px;
+    height: 270px;
     background-color: white;
 }
-
+.event-single .item-image-holder,
 .services-single .item-image-holder{
     margin-bottom: 0px;   	
     padding-bottom: 60%;
     overflow: hidden;
 }
+.date-holder{
+	position: absolute;
+    background: #555555;
+    padding: 10px 20px;
+    right: -10px;
+    top: 10px;
+}
+.event-single .item-image-holder img,
 .services-single .item-image-holder img{
    	transition: all 0.4s linear;
 }
+.services-single:hover .item-image-holder img,
 .services-single:hover .item-image-holder img{
    	transform: scale(1.4);
 }
@@ -975,7 +1035,7 @@ images
 .gallery-single{
 	box-shadow: 2px 2px 10px 2px #ddd;
     padding: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     margin-bottom: 20px;
 }
 .gallery-single .item-image-holder{
@@ -984,14 +1044,41 @@ images
 .gallery-single a span.image-date{
    text-align: center;
    color :#555;
+   margin-top: 20px;
    margin-bottom: 20px;
    display: block;
+   font-size: 18px;
+   font-family: 'McLaren', cursive;
+
 }
 .fancybox-content.gallery-img-big .fancybox-close-small{
 	background: white;
     top: -30px;
     border-radius: 50%;
     right: -16px;
+}
+h5.event-name{
+	text-align: center;
+}
+.events-single{
+    border: 1px solid #DDD;
+    padding: 15px;
+}
+.event-overlay{
+	background-color: white;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+}
+.event-overlay:after {
+    content: "";
+    height: 45px;
+    transform: skew(0deg , 7deg);
+    width: 100%;
+    background-color: white;
+    bottom: 8px;
+    position: absolute;
 }
 .link-effects{
 	transition: all 0.4s linear;
@@ -1048,7 +1135,7 @@ span.footer-social-icons ul li .fa {
     border: 1px solid #ddd;
     text-align: center;
     line-height: 1.9;
-    transition: all 0.3 linear;
+    transition: all 0.3s linear;
 }
 span.footer-social-icons ul li a[href*="facebook.com"] .fa:hover {
     background-color: #3b5998 ;	
@@ -1093,6 +1180,16 @@ span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
 	border-bottom: 2px solid #eee80f;
 }
 
+.modelcraft-team-filtre-button{
+	margin-bottom: 20px;
+}
+.modelcraft-team-filtre-button button.modelcraft-button{
+	display: inline-block;
+}
+.modelcraft-team-filtre-button button.modelcraft-button.is-checked{
+	background-color: #000;
+	color: white;
+}
 .modelcraft-team-single {
 	width: 30%;
     padding: 10px;
@@ -1171,7 +1268,7 @@ span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
 }
 .testimonial-single .testimonial-text{
 	text-align: center;
-}
+} 
 
 .testimonial-single .testimonial-text h3{
 	border-bottom: 4px solid #eee80f;
@@ -1189,4 +1286,352 @@ span.footer-social-icons ul li a[href*="instagram.com"] .fa:hover {
     font-size: 20px;
     color: #ed1e24;
 
+}
+
+.inner-service-section{
+	background-image: none;
+}
+
+.inner-service-whole-wrapper .services-single{
+	border: 1px solid #ddd;
+	padding: 15px;
+}
+
+.address-wrapper ul {
+    list-style: none;
+}
+.address-wrapper ul li {
+	position: relative;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+
+}
+.address-wrapper ul li .fa{
+	font-size: 30px;
+	position: absolute;
+	left: 0px;
+}
+
+.address-wrapper ul li span {
+	padding-left: 50px;
+    display: block;
+    margin-bottom: 20px;
+}
+.address-wrapper ul li span a{
+	color: black;
+}
+
+.contact-social-icons ul li{
+	border-bottom: none;
+	display: inline;
+	margin-right: 20px;
+
+}
+.contact-social-icons ul li .fa{
+	position: relative;
+}
+.contact-social-icons ul li a{
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000;
+	color: black;
+	line-height: 3;
+	display: inline-block;
+	font-size: 20px;
+	text-align: center;
+}
+.contact-social-icons ul li a[href*="facebook.com"]:hover{
+	background-color: #4267B2;
+	color: white;
+}
+.contact-social-icons ul li a[href*="twitter.com"]:hover{
+	background-color: #1DA1F2;
+	color: white;
+}
+.contact-social-icons ul li a[href*="instagram.com"]:hover{
+	background-color: #C13584;
+	color: white;
+}
+
+.address-wrapper {
+    border-right: 1px solid #ddd;
+    padding-right: 40px;
+}
+.contact-form-wrapper form input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.contact-form-wrapper form textarea{
+	width: 100%;
+}
+.contact-form-wrapper form input[type="submit"]{
+	width: 20%;
+	float: right;
+}
+.map-wrapper iframe{
+	width: 100%;
+}
+ul.rule-list{
+	list-style: none;
+}
+ul.rule-list li{
+	position: relative;
+	padding-bottom: 20px;
+}
+ul.rule-list li .fa{
+	margin-right: 10px;
+}
+
+.event-detail-text{
+	padding: 15px;
+	box-shadow: 2px 2px 10px 2px #ddd;
+}
+.event-rules-section{
+	background-color: #252525;
+	position: relative;
+}
+.event-detail-text{
+	background-color: white;
+}
+
+.event-rule-picture .item-image-holder{
+	box-shadow: 15px -12px 14px 7px #2b2222;
+}
+.event-rule{
+	box-shadow: 15px -12px 14px 7px #2b2222;	
+	background-color: #000;
+	border: 2px dashed #fff;
+
+}
+.section-overlay-skewed{
+    background-color: white;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+.section-overlay-skewed:after{
+	content: "";
+    height: 230px;
+    transform: skew(0deg , 3deg);
+    width: 100%;
+    background-color: white;
+    bottom: -106px;
+    position: absolute;
+}
+.event-rule ul li,
+.event-rule h2{
+	color: white;
+}
+.button-holder a{
+	text-align: center;
+}
+.apply-form form input{
+	width: 80%;
+}
+.form-wrapper .modal-dialog{
+	width: 80%;
+	height: 100%;
+
+}
+.form-wrapper .modal-dialog .modal-content{
+	height: 100%;
+	overflow: scroll;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header{
+	background-color: #252525;
+	text-align: center;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header .close{
+	opacity: 1;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header .close .fa{
+	color: white;
+	opacity: 1;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header .section-heading h5{
+	color: white;
+	text-transform: capitalize;
+}
+.apply-form h2{
+	text-align: center;
+	text-transform: capitalize;
+	border-bottom: 1px solid #ddd;
+
+}
+.apply-form .setup-panel{
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+.apply-form .setup-panel li.active,
+.apply-form .setup-panel li.active active,
+.apply-form .setup-panel li:hover{
+	background-color: #252525;
+	color: #fff;	
+	box-shadow: 2px 2px 10px 10px #ddd;
+}
+
+.apply-form .setup-panel li.active h4,
+.apply-form .setup-panel li:hover h4,
+.apply-form .setup-panel li:hover p{
+	color: white;
+}
+.enroll-form-wrapper input{
+	width: 100%;
+	margin-bottom: 10px;
+
+}
+.enroll-form-wrapper label{
+	position: absolute;
+    right: 20%;
+    top: 22%;
+	}
+.modelcraftform .modelcraft-button{
+		
+	width: 30%;
+	margin: 50px auto 0;
+}
+.wizard-content-left h1 {
+	color: #ffffff;
+	font-size: 38px;
+	font-weight: 600;
+	padding: 12px 20px;
+	text-align: center;
+}
+.form-wizard {
+	color: #888888;
+	padding: 30px;
+}
+.form-wizard .wizard-fieldset {
+	display: none;
+}
+.form-wizard .wizard-fieldset.show {
+	display: block;
+	text-align: left;	
+}
+.form-wizard .wizard-form-error {
+	display: none;
+	background-color: #d70b0b;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	width: 100%;
+}
+.trial-call-form h2{
+	color: #03bcd8;
+}
+/*.form-wizard .form-wizard-previous-btn {
+  background-color: #fb1647;
+}*/
+/*.form-wizard .form-control {
+  font-weight: 300;
+  height: auto !important;
+  padding: 15px;
+  color: #888888;
+  background-color: #f1f1f1;
+  border: none;
+}*/
+.form-wizard .form-control:focus {
+	box-shadow: none;
+}
+.form-wizard .form-group {
+	position: relative;
+	margin: 25px 0;
+}
+.form-wizard .form-wizard-steps {
+	margin: 30px auto;
+	width: 70%;
+}
+
+.wizard-fieldset form label{
+	position: absolute;
+    top: 10px;
+    left: 50px;
+    background: white;
+}
+.wizard-fieldset form textarea,
+.wizard-fieldset form input{
+	margin: 20px 0px;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+.wizard-fieldset form input[type="date"],
+.wizard-fieldset form input[type="time"]{
+	background-color: white;
+}
+.wizard-fieldset form input[type="date"]:focus, input[type="date"]:hover{
+	color: inherit;
+	outline: none;
+	background-color: white;
+}
+ .wizard-fieldset form textarea{
+	background-color: transparent;
+	border: 1px solid #ddd;
+}
+.form-wizard .form-wizard-steps li {
+	width: 50%;
+	float: left;
+	transition: all 1s linear;
+	position: relative;
+
+}
+.form-wizard .form-wizard-steps li::after {
+	background-color: #f3f3f3;
+	content: "";
+	height: 5px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	transition: all 1s linear;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+	border-top: 1px solid #dddddd;
+}
+.form-wizard .form-wizard-steps li span {
+	background-color: #dddddd;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	z-index: 1;
+	padding: 10px;
+
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+	width: 50%;
+}
+.form-wizard .form-wizard-steps li.active span, .form-wizard .form-wizard-steps li.activated span {
+	background-color: #03bcd8;
+
+	color: #ffffff;
+}
+.form-wizard .form-wizard-steps li.active::after, .form-wizard .form-wizard-steps li.activated::after {
+    background-color: #03bcd8;
+    left: 50%;
+    width: 50%;
+    border-color: #03bcd8;
+}
+.form-wizard .form-wizard-steps li.activated::after {
+	width: 100%;
+	border-color:#03bcd8;
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+	left: 0;
+}
+
+.confirmed-wrapper ul{
+	list-style: none;
+}
+
+.confirmed-wrapper ul li span{
+	color: #03bcd8;
+	font-weight: 600;
+	margin-right: 10px;
+}
+.modelcraftform{
+	margin-bottom: 20px;
 }
