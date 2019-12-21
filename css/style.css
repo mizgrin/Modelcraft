@@ -260,6 +260,7 @@ table th a {
 button,
 input,
 select,
+select,
 textarea {
 	color: #666;
 	font-size: 14px;
@@ -525,12 +526,15 @@ textarea:focus {
 input[type="text"],
 input[type="date"],
 input[type="time"],
+input[type="tel"],
 input[type="email"],
 input[type="url"],
 input[type="varchar"],
 input[type="password"],
 input[type="search"],
-input[type="number"] {
+input[type="number"],	
+input[type="height"],
+select{
 	padding: 10px 0 10px 15px;
 }
 
@@ -540,7 +544,7 @@ input[type="search"] {
 
 select {
 	width: 100%;
-	padding: 5px;
+	
 }
 
 textarea {
@@ -667,8 +671,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 input[type="date"]:focus,
 input[type="date"]:hover {
-	color: white;
-	background-color: transparent;
+	color: #252525;
+	background-color: white;
 }
 
 a {
@@ -1432,4 +1436,202 @@ ul.rule-list li .fa{
 }
 .form-wrapper .modal-dialog .modal-content{
 	height: 100%;
+	overflow: scroll;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header{
+	background-color: #252525;
+	text-align: center;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header .close{
+	opacity: 1;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header .close .fa{
+	color: white;
+	opacity: 1;
+}
+.form-wrapper .modal-dialog .modal-content .modal-header .section-heading h5{
+	color: white;
+	text-transform: capitalize;
+}
+.apply-form h2{
+	text-align: center;
+	text-transform: capitalize;
+	border-bottom: 1px solid #ddd;
+
+}
+.apply-form .setup-panel{
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+.apply-form .setup-panel li.active,
+.apply-form .setup-panel li.active active,
+.apply-form .setup-panel li:hover{
+	background-color: #252525;
+	color: #fff;	
+	box-shadow: 2px 2px 10px 10px #ddd;
+}
+
+.apply-form .setup-panel li.active h4,
+.apply-form .setup-panel li:hover h4,
+.apply-form .setup-panel li:hover p{
+	color: white;
+}
+.enroll-form-wrapper input{
+	width: 100%;
+	margin-bottom: 10px;
+
+}
+.enroll-form-wrapper label{
+	position: absolute;
+    right: 20%;
+    top: 22%;
+	}
+.modelcraftform .modelcraft-button{
+		
+	width: 30%;
+	margin: 50px auto 0;
+}
+.wizard-content-left h1 {
+	color: #ffffff;
+	font-size: 38px;
+	font-weight: 600;
+	padding: 12px 20px;
+	text-align: center;
+}
+.form-wizard {
+	color: #888888;
+	padding: 30px;
+}
+.form-wizard .wizard-fieldset {
+	display: none;
+}
+.form-wizard .wizard-fieldset.show {
+	display: block;
+	text-align: left;	
+}
+.form-wizard .wizard-form-error {
+	display: none;
+	background-color: #d70b0b;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	width: 100%;
+}
+.trial-call-form h2{
+	color: #03bcd8;
+}
+/*.form-wizard .form-wizard-previous-btn {
+  background-color: #fb1647;
+}*/
+/*.form-wizard .form-control {
+  font-weight: 300;
+  height: auto !important;
+  padding: 15px;
+  color: #888888;
+  background-color: #f1f1f1;
+  border: none;
+}*/
+.form-wizard .form-control:focus {
+	box-shadow: none;
+}
+.form-wizard .form-group {
+	position: relative;
+	margin: 25px 0;
+}
+.form-wizard .form-wizard-steps {
+	margin: 30px auto;
+	width: 70%;
+}
+
+.wizard-fieldset form label{
+	position: absolute;
+    top: 10px;
+    left: 50px;
+    background: white;
+}
+.wizard-fieldset form textarea,
+.wizard-fieldset form input{
+	margin: 20px 0px;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+.wizard-fieldset form input[type="date"],
+.wizard-fieldset form input[type="time"]{
+	background-color: white;
+}
+.wizard-fieldset form input[type="date"]:focus, input[type="date"]:hover{
+	color: inherit;
+	outline: none;
+	background-color: white;
+}
+ .wizard-fieldset form textarea{
+	background-color: transparent;
+	border: 1px solid #ddd;
+}
+.form-wizard .form-wizard-steps li {
+	width: 50%;
+	float: left;
+	transition: all 1s linear;
+	position: relative;
+
+}
+.form-wizard .form-wizard-steps li::after {
+	background-color: #f3f3f3;
+	content: "";
+	height: 5px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	transition: all 1s linear;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+	border-top: 1px solid #dddddd;
+}
+.form-wizard .form-wizard-steps li span {
+	background-color: #dddddd;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	z-index: 1;
+	padding: 10px;
+
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+	width: 50%;
+}
+.form-wizard .form-wizard-steps li.active span, .form-wizard .form-wizard-steps li.activated span {
+	background-color: #03bcd8;
+
+	color: #ffffff;
+}
+.form-wizard .form-wizard-steps li.active::after, .form-wizard .form-wizard-steps li.activated::after {
+    background-color: #03bcd8;
+    left: 50%;
+    width: 50%;
+    border-color: #03bcd8;
+}
+.form-wizard .form-wizard-steps li.activated::after {
+	width: 100%;
+	border-color:#03bcd8;
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+	left: 0;
+}
+
+.confirmed-wrapper ul{
+	list-style: none;
+}
+
+.confirmed-wrapper ul li span{
+	color: #03bcd8;
+	font-weight: 600;
+	margin-right: 10px;
+}
+.modelcraftform{
+	margin-bottom: 20px;
 }
