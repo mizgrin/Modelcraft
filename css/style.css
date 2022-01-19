@@ -1648,7 +1648,7 @@ ul.rule-list li .fa{
 }
 .video-overlay{
 	position: absolute;
-	width: 100%;
+	width: 100%;		 	
 	height: 100%;
 	top: 0;
 	display: flex;
